@@ -1,0 +1,17 @@
+{
+	"restartable": "rs",
+	"ignore": [".git", "node_modules/**/node_modules"],
+	"verbose": true,
+	"execMap": {
+		"ts": "ts-node"
+	},
+	"watch": ["src/"],
+	"env": {
+		"NODE_ENV": "development"
+	},
+	"ext": "js,json,ts",
+	"signal": "SIGHUP",
+	"events": {
+		"crash": "sh -c 'lsof -i :${PORT:-3334} -t | xargs kill'"
+	}
+}
